@@ -17,11 +17,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Questions <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="askaround.php">Ask Question</  a></li>
-            <li><a href="viewtags.php">Tags</a></li>
-            <li><a href="usersQ.php">users</a></li>
+            <li><a href="index.php?task=ask">Ask Question</  a></li>
+            <li><a href="index.php?task=tags">Tags</a></li>
+            <li><a href="index.php?task=usersQ">users</a></li>
             <li class="divider"></li>
-            <li><a href="mine.php">My Questions</a></li>
+            <li><a href="index.php?task=mine">My Questions</a></li>
           </ul>
         </li>
         <li><a href="about.php">About</a></li>
@@ -37,8 +37,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['nomC'];?> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="viewprofile.php"><span class="glyphicon glyphicon-user"> View Profile</a></li>
-            <li><a href="settings.php"><span class="glyphicon glyphicon-wrench"> Settings</a></li>
+            <li><a href="index.php?task=viewprofile"><span class="glyphicon glyphicon-user"> View Profile</a></li>
+            <li><a href="index.php?task=settings"><span class="glyphicon glyphicon-wrench"> Settings</a></li>
             <li class="divider"></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-off"> Logout</a></li>
           </ul>
