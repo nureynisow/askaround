@@ -6,6 +6,7 @@
 	}
 	catch (Exception $e)
 	{
+			echo "<h1>ERREUR</h1>";
 	        die('Erreur : ' . $e->getMessage());
 	}
 ?>
