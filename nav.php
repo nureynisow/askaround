@@ -24,13 +24,13 @@
             <li><a href="index.php?task=mine">My Questions</a></li>
           </ul>
         </li>
-        <li><a href="about.php">About</a></li>
+        <li><a target="_blank" href="http://www.labri.fr/perso/falleri/dist/ens/it103/projets/Projet2014.pdf">About</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" method="POST" action="index.php?task=search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" name="q" placeholder="Search a question">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span></a></li>

@@ -6,5 +6,11 @@
 			include 'askaround.php';
 		if($_GET['task']=='viewQ')
 			include 'question.php';
+		if($_GET['task']=='tags')
+			include 'tags.php';
+		if($_GET['task']=='search')
+			include 'search.php';
+		if($_GET['task']=='mine')
+			include 'mine.php';
 	}
 ?>

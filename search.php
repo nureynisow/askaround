@@ -1,9 +1,11 @@
 <?php
 	include 'inc_bdd.php';
-	echo "<br><a id=\"askbtn\" class=\"btn btn-success btn-large\"> ASK A QUESION</a>";
-	$req = $bdd->query("SELECT * FROM `question` order by `dateQ`");
-	//var_dump($req);
+	$model = $_POST['q'];
 
+	echo "<br><a id=\"askbtn\" class=\"btn btn-success btn-large\"> ASK A QUESION</a>";
+	$req = $bdd->query("SELECT * FROM `question` where `titre` like '%$model%'");
+	if($req->rowCount() == 0)
+		echo "<hr> No result found";
 	echo '<table class="table table-stripped">';	
 	while($data = $req->fetch()){
 		echo "<tr>
@@ -21,6 +23,7 @@
 			echo "<td>$nbrep Answers</td>";
 		echo "</tr>";
 	}
+
 ?>
 <style type="text/css">
 	#askbtn{

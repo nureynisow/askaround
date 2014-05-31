@@ -1,7 +1,9 @@
 <?php
+//	session_start();
+	$me = $_SESSION['pseudo'];
 	include 'inc_bdd.php';
 	echo "<br><a id=\"askbtn\" class=\"btn btn-success btn-large\"> ASK A QUESION</a>";
-	$req = $bdd->query("SELECT * FROM `question` order by `dateQ`");
+	$req = $bdd->query("SELECT * FROM `question` where `pseudo` = '$me' order by `dateQ`");
 	//var_dump($req);
 
 	echo '<table class="table table-stripped">';	
