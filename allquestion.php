@@ -1,6 +1,6 @@
 <?php
 	include 'inc_bdd.php';
-	echo "<br><a id=\"askbtn\" class=\"btn btn-success btn-large\"> ASK A QUESION</a>";
+	echo "<br> <a id=\"askbtn\" href=\"index.php?task=ask\" class=\"btn btn-success btn-large\"> ASK A QUESION</a>";
 	$req = $bdd->query("SELECT * FROM `question` order by `dateQ`");
 	//var_dump($req);
 

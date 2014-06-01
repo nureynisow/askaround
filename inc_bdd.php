@@ -2,7 +2,7 @@
 	$bdd = NULL;
 	try
 	{
-		$bdd = new PDO('mysql:host=localhost;dbname=ask','root','$');
+		$bdd = new PDO('mysql:host=localhost;dbname=ask','root','');
 	}
 	catch (Exception $e)
 	{

@@ -7,21 +7,31 @@
 	//var_dump($req);
 	$data = $req->fetch();
 		echo "<h3>".$data['titre']."</h3>";
-		echo "posted ".$data['dateQ']." by <a href=\"index.php?task=viewU&user=".$data['pseudo']."\">".$data['pseudo']."</a>";
+		
+		echo " Posted ".$data['dateQ']." by <a href=\"index.php?task=viewU&user=".$data['pseudo']."\">".$data['pseudo']."</a>";
+		if($data['pseudo']==$_SESSION['pseudo']){
+			echo "  <a class=\"label label-sm label-warning\" href=\"index.php?task=editQ&q=".$_GET['q']."\">Edit this question</a>";
+			echo "  <a class=\"label label-sm label-danger\" href=\"delete.php?q=".$_GET['q']."\">Delete it</a>";
+		}
 		echo "<hr>";
 		echo '<div class="question">';
 			echo $data['question'];
 		echo "</div><hr><h2>Answers <a class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#answer\"><span class=\"glyphicon glyphicon-plus \"> Add answer</span></a></h2>";
 	$req =	$bdd->query("SELECT * FROM `reponse` where `idQ` = $id");
 	while($data = $req->fetch()){
+		$nbvote = $bdd->query("SELECT count(pseudo) FROM `vote` WHERE `idrep`='".$data['idR']."'");
+		$nbvote = $nbvote->fetch();
+		$nbvote = $nbvote[0];
 		echo '<table class="table table-bordered">';
 		echo "<tr>
 				<td><div class=\"reponse\">".$data['reponse']."</div></td>
 				<td>
-					<span class=\"big\" ><span style=\"color:cyan\">0</span> <span class=\"glyphicon glyphicon-ok\"></span></span>
+					<span class=\"big\" ><span style=\"color:cyan\">$nbvote</span> <a href=\"like.php?rep=".$data['idR']."&q=".$_GET['q']."\"><span class=\"glyphicon glyphicon-ok\"></span></a></span>
+
 				</td>
-				</tr>
-				<tr>
+				</tr>";
+		
+		echo "<tr>
 					<td></td>
 					<td>answered by <a href=\"index.php?task=viewU&user=".$data['pseudo']."\">".$data['pseudo']."</a></td>
 				</tr>";

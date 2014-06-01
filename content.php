@@ -12,5 +12,8 @@
 			include 'search.php';
 		if($_GET['task']=='mine')
 			include 'mine.php';
+		if($_GET['task']=='editQ')
+			include 'editQ.php';
+		
 	}
 ?>

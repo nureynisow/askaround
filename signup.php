@@ -14,6 +14,6 @@
 			</center>";
 	echo "<h2> >>> Redirection to home : 10 seconds </h2> or <a href=\"index.php\">click here</a>";
 	//if(mail($email,'[XLFG]',"activate your account via the code = $actif"))
-		header("Refresh: 5; url=index.php");
+		header("Refresh: 1; url=index.php");
 
 ?>

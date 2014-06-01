@@ -25,7 +25,7 @@
 <div id="form-login">
   <form action="logger.php" method="POST" class="form-signin" role="form" id="log">
   	<h3>Authentification</h3>
-  	<input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur"/><hr>
+  	<input type="email" name="username" class="form-control" placeholder="Nom d'utilisateur"/><hr>
   	<input type="password" name="pwd" class="form-control" placeholder="Mot de passe"/><hr>
   	<input type="submit" class="btn btn-info"/>		<input type="reset" class="btn btn-danger"/>  <br> 
     
