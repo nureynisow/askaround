@@ -1,6 +1,6 @@
 
 <?php
-
+//session_start();
 	include 'inc_bdd.php';
 	$id = intval($_GET['q']);
 	$req = $bdd->query("SELECT * FROM `question` where `idQ` = $id");
@@ -32,9 +32,13 @@
 				</tr>";
 		
 		echo "<tr>
-					<td></td>
-					<td>answered by <a href=\"index.php?task=viewU&user=".$data['pseudo']."\">".$data['pseudo']."</a></td>
-				</tr>";
+				<td></td>
+				<td>answered by <a href=\"index.php?task=viewU&user=".$data['pseudo']."\">".$data['pseudo']."</a>";
+				if($data['pseudo']==$_SESSION['pseudo']){
+					echo " <a href=\"index.php?task=editA&rep=".$data['idR']."\" class=\"label label-danger\">Edit your answer</a>";
+				}
+		echo "</td>
+			</tr>";
 		echo "</table>";
 
 	}

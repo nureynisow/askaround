@@ -1,4 +1,7 @@
 <style type="text/css">
+body{
+  background-image: url('back.jpg');
+}
 .form-signin {
   max-width: 300px;
   padding-left: 50px;
@@ -20,8 +23,13 @@
   border-top-left-radius: 25px;
 
 }
+center{
+  font-size: 128px;
+  color: white;
+  text-shadow: 3px 3px 2px black;
+}
 </style>
-<center><h1>Ask Around </h1></center>
+<center>Ask Around </center>
 <div id="form-login">
   <form action="logger.php" method="POST" class="form-signin" role="form" id="log">
   	<h3>Authentification</h3>
