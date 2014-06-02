@@ -76,7 +76,13 @@ CREATE TABLE `vote` (
   CONSTRAINT `vote_ibfk_1` FOREIGN KEY (`idrep`) REFERENCES `reponse` (`idR`),
   CONSTRAINT `vote_ibfk_2` FOREIGN KEY (`pseudo`) REFERENCES `user` (`pseudo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-		//var_dump($req);
+  $req = $bdd->exec("INSERT INTO `user` VALUES ('bob','bob@enseirb-matmeca.fr','MARLEY NESTA','48181acd22b3edaebc8a447868a7df7ce629920a'),('max','max@enseirb-matmeca.fr','MAX MAX','0706025b2bbcec1ed8d64822f4eccd96314938d0');");
+  $req = $bdd->exec("INSERT INTO `question` VALUES (12,'2014-06-02','test','hello?','max')");
+  $req = $bdd->exec("INSERT INTO `question_tag` VALUES (12,'TEST')");
+  $req = $bdd->exec("INSERT INTO `reponse` VALUES (1,12,'2014-06-02','hello!','bob')");
+  $req = $bdd->exec("INSERT INTO `tags` VALUES ('TEST'");
+  $req = $bdd->exec("INSERT INTO `vote` VALUES (1,'max');");
+	//var_dump($req);
 	}
 	catch (Exception $e)
 	{

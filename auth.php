@@ -92,7 +92,7 @@ center{
   function checkpwd(){
     var pwd1 = document.getElementById("pwd1").value;
     var pwd2 = document.getElementById("pwd2").value;
-    if(pwd1 == pwd2 && pwd1.length > 6 && pwd1.length < 12)
+    if(pwd1 == pwd2 )//&& pwd1.length > 2 && pwd1.length < 13
       document.getElementById("submit").disabled=false;
     else 
       document.getElementById("submit").disabled=true;
